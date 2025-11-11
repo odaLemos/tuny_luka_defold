@@ -1,7 +1,7 @@
 name: "default"
 scale_along_z: 0
 embedded_instances {
-  id: "player"
+  id: "tuny"
   data: "components {\n"
   "  id: \"tuny\"\n"
   "  component: \"/game/tuny.script\"\n"
@@ -49,18 +49,4 @@ embedded_instances {
   position {
     y: 23.0
   }
-}
-embedded_instances {
-  id: "camera"
-  data: "embedded_components {\n"
-  "  id: \"camera\"\n"
-  "  type: \"camera\"\n"
-  "  data: \"aspect_ratio: 1.0\\n"
-  "fov: 0.7854\\n"
-  "near_z: 1.0\\n"
-  "far_z: -1.0\\n"
-  "orthographic_projection: 1\\n"
-  "\"\n"
-  "}\n"
-  ""
 }

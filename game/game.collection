@@ -3,8 +3,8 @@ collection_instances {
   id: "tuny"
   collection: "/game/tuny.collection"
   position {
-    x: 1598.0
-    y: 996.0
+    x: 350.0
+    y: 114.0
   }
 }
 scale_along_z: 0
@@ -27,7 +27,22 @@ embedded_instances {
   "\"\n"
   "}\n"
   ""
+}
+embedded_instances {
+  id: "camera"
+  data: "embedded_components {\n"
+  "  id: \"camera\"\n"
+  "  type: \"camera\"\n"
+  "  data: \"aspect_ratio: 1.0\\n"
+  "fov: 0.7854\\n"
+  "near_z: 1.0\\n"
+  "far_z: -1.0\\n"
+  "orthographic_projection: 1\\n"
+  "\"\n"
+  "}\n"
+  ""
   position {
-    y: 1.0
+    x: 986.0
+    y: 546.0
   }
 }

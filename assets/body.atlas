@@ -1,0 +1,74 @@
+animations {
+  id: "walk"
+  images {
+    image: "/assets/images/prototype/Logaboga/sprites/LB_Prototype_Player-6.png"
+  }
+  images {
+    image: "/assets/images/prototype/Logaboga/sprites/LB_Prototype_Player-7.png"
+  }
+  images {
+    image: "/assets/images/prototype/Logaboga/sprites/LB_Prototype_Player-8.png"
+  }
+  images {
+    image: "/assets/images/prototype/Logaboga/sprites/LB_Prototype_Player-9.png"
+  }
+  images {
+    image: "/assets/images/prototype/Logaboga/sprites/LB_Prototype_Player-10.png"
+  }
+  images {
+    image: "/assets/images/prototype/Logaboga/sprites/LB_Prototype_Player-11.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "jump"
+  images {
+    image: "/assets/images/prototype/Logaboga/sprites/LB_Prototype_Player-12.png"
+  }
+  images {
+    image: "/assets/images/prototype/Logaboga/sprites/LB_Prototype_Player-13.png"
+  }
+  images {
+    image: "/assets/images/prototype/Logaboga/sprites/LB_Prototype_Player-14.png"
+  }
+  images {
+    image: "/assets/images/prototype/Logaboga/sprites/LB_Prototype_Player-15.png"
+  }
+  images {
+    image: "/assets/images/prototype/Logaboga/sprites/LB_Prototype_Player-16.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 60
+}
+animations {
+  id: "fall"
+  images {
+    image: "/assets/images/prototype/Logaboga/sprites/LB_Prototype_Player-11.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 60
+}
+animations {
+  id: "idle"
+  images {
+    image: "/assets/images/prototype/Logaboga/sprites/LB_Prototype_Player-0.png"
+  }
+  images {
+    image: "/assets/images/prototype/Logaboga/sprites/LB_Prototype_Player-1.png"
+  }
+  images {
+    image: "/assets/images/prototype/Logaboga/sprites/LB_Prototype_Player-2.png"
+  }
+  images {
+    image: "/assets/images/prototype/Logaboga/sprites/LB_Prototype_Player-3.png"
+  }
+  images {
+    image: "/assets/images/prototype/Logaboga/sprites/LB_Prototype_Player-4.png"
+  }
+  images {
+    image: "/assets/images/prototype/Logaboga/sprites/LB_Prototype_Player-5.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+}
+extrude_borders: 2

@@ -8,7 +8,8 @@ local max_speed = 450
 -- gravity pulling the player down in pixel units
 local gravity = -1900
 -- take-off speed when jumping in pixel units
-local jump_takeoff_speed = 1200
+--local jump_takeoff_speed = 1200
+local jump_takeoff_speed = 800
 
 
 -- pre-hashing ids improves performance
@@ -31,7 +32,7 @@ function init(self)
 	-- activate camera attached to the player collection
 	-- this will send camera updates to the render script
 	--msg.post("#camera", "acquire_camera_focus")
-	msg.post("@render:", "use_camera_projection")
+	--msg.post("@render:", "use_camera_projection")
 
 	-- initial player velocity
 	self.velocity = vmath.vector3(0, 0, 0)

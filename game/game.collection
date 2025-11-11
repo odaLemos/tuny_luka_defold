@@ -3,8 +3,8 @@ collection_instances {
   id: "tuny"
   collection: "/game/tuny.collection"
   position {
-    x: 350.0
-    y: 114.0
+    x: 384.0
+    y: 404.0
   }
 }
 scale_along_z: 0
@@ -42,7 +42,7 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 986.0
+    x: 956.0
     y: 546.0
   }
 }

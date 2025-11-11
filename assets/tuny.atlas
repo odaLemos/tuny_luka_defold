@@ -1,0 +1,46 @@
+animations {
+  id: "idle"
+  images {
+    image: "/assets/images/tuny/hollow/hollow-22.png"
+  }
+  playback: PLAYBACK_NONE
+  fps: 60
+}
+animations {
+  id: "walk"
+  images {
+    image: "/assets/images/tuny/hollow/hollow-9.png"
+  }
+  images {
+    image: "/assets/images/tuny/hollow/hollow-12.png"
+  }
+  images {
+    image: "/assets/images/tuny/hollow/hollow-24.png"
+  }
+  images {
+    image: "/assets/images/tuny/hollow/hollow-28.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "fall"
+  images {
+    image: "/assets/images/tuny/hollow/hollow-249.png"
+  }
+  images {
+    image: "/assets/images/tuny/hollow/hollow-251.png"
+  }
+  fps: 60
+}
+animations {
+  id: "jump"
+  images {
+    image: "/assets/images/tuny/hollow/hollow-231.png"
+  }
+  images {
+    image: "/assets/images/tuny/hollow/hollow-232.png"
+  }
+  fps: 60
+}
+extrude_borders: 2

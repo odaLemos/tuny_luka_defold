@@ -663,11 +663,6 @@ layers {
     tile: 108
   }
   cell {
-    x: 2
-    y: 3
-    tile: 128
-  }
-  cell {
     x: 8
     y: 3
     tile: 126
@@ -830,7 +825,7 @@ layers {
   cell {
     x: 23
     y: 4
-    tile: 128
+    tile: 108
   }
   cell {
     x: 29
@@ -1668,19 +1663,9 @@ layers {
     tile: 154
   }
   cell {
-    x: 2
-    y: 10
-    tile: 128
-  }
-  cell {
     x: 6
     y: 10
     tile: 108
-  }
-  cell {
-    x: 23
-    y: 10
-    tile: 128
   }
   cell {
     x: 28
@@ -2030,7 +2015,7 @@ layers {
   cell {
     x: 2
     y: 14
-    tile: 128
+    tile: 108
   }
   cell {
     x: 23
@@ -2040,12 +2025,12 @@ layers {
   cell {
     x: 25
     y: 14
-    tile: 128
+    tile: 108
   }
   cell {
     x: 27
     y: 14
-    tile: 128
+    tile: 108
   }
   cell {
     x: 29

@@ -10,6 +10,14 @@ key_trigger {
   input: KEY_SPACE
   action: "jump"
 }
+key_trigger {
+  input: KEY_D
+  action: "action"
+}
+key_trigger {
+  input: KEY_UP
+  action: "up"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_1
   action: "touch"
@@ -25,4 +33,12 @@ gamepad_trigger {
 gamepad_trigger {
   input: GAMEPAD_RPAD_DOWN
   action: "jump"
+}
+gamepad_trigger {
+  input: GAMEPAD_RPAD_RIGHT
+  action: "action"
+}
+gamepad_trigger {
+  input: GAMEPAD_LPAD_UP
+  action: "up"
 }

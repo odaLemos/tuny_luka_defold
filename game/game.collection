@@ -3,8 +3,16 @@ collection_instances {
   id: "tuny"
   collection: "/game/tuny.collection"
   position {
-    x: 384.0
-    y: 404.0
+    x: 223.0
+    y: 45.0
+  }
+}
+collection_instances {
+  id: "simple_duct"
+  collection: "/game/simple_duct.collection"
+  position {
+    x: 341.0
+    y: 180.0
   }
 }
 scale_along_z: 0

@@ -25,9 +25,13 @@ function on_collision_response(self, message_id, message)
 		-- Verifica se a colisão é com o grupo do seu personagem
 		if message.enter and message.group == hash("player") then
 			-- Personagem ENTROU na área
-			print("pos: "..go.get_position(self.duct_out))
+			print("parent: "..go.get_parent())
+
+			local parent_name = tostring(go.get_parent())
+			local num = string.match(parent_name, "%d")
+			local duct_out_pos = go.get_world_position("duct_out"..num)
 			-- Envia a mensagem para o script do Player
-			msg.post(message.other_id, "interact_trigger_enter", {position=go.get_position("duct_out")})
+			msg.post(message.other_id, "interact_trigger_enter", {position=duct_out_pos})
 
 		elseif not message.enter and message.group == hash("player") then
 			-- Personagem SAIU da área

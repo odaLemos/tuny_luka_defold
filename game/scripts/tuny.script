@@ -151,7 +151,6 @@ function on_message(self, message_id, message, sender)
 		-- Recebeu a mensagem: "Você saiu da área, não pode mais interagir."
 		self.can_interact = false
 		self.interact_target = nil
-		self.duct_exit_pos = nil
 		print("Não pode interagir.")
 	end
 	
@@ -204,8 +203,9 @@ function on_input(self, action_id, action)
 		end
 	end
 
-	if action_id == hash("up") and self.duct_exit_pos ~= nil then
+	if action_id == hash("up") and self.interact_target ~= nil then
 		go.set_position(self.duct_exit_pos)
+		print("tuny pos: "..go.get_position())
 	end
 	
 	if action_id == hash("action") and action.pressed and self.can_interact then

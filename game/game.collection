@@ -1,18 +1,47 @@
 name: "game"
+instances {
+  id: "duct_in2"
+  prototype: "/game/duct_in.go"
+}
+instances {
+  id: "duct_out2"
+  prototype: "/game/duct_out.go"
+  position {
+    x: 1044.0
+    y: 379.0
+  }
+}
+instances {
+  id: "duct_in1"
+  prototype: "/game/duct_in.go"
+}
+instances {
+  id: "duct_out1"
+  prototype: "/game/duct_out.go"
+  position {
+    x: -181.0
+    y: 589.0
+  }
+}
+instances {
+  id: "duct_in3"
+  prototype: "/game/duct_in.go"
+}
+instances {
+  id: "duct_out3"
+  prototype: "/game/duct_out.go"
+  position {
+    x: -7.0
+    y: -657.0
+  }
+}
 collection_instances {
   id: "tuny"
   collection: "/game/tuny.collection"
   position {
     x: 223.0
     y: 45.0
-  }
-}
-collection_instances {
-  id: "simple_duct"
-  collection: "/game/simple_duct.collection"
-  position {
-    x: 341.0
-    y: 180.0
+    z: -0.9
   }
 }
 scale_along_z: 0
@@ -52,5 +81,35 @@ embedded_instances {
   position {
     x: 956.0
     y: 546.0
+  }
+}
+embedded_instances {
+  id: "duct2"
+  children: "duct_in2"
+  children: "duct_out2"
+  data: ""
+  position {
+    x: 729.0
+    y: 555.0
+  }
+}
+embedded_instances {
+  id: "duct1"
+  children: "duct_in1"
+  children: "duct_out1"
+  data: ""
+  position {
+    x: 372.0
+    y: 96.0
+  }
+}
+embedded_instances {
+  id: "duct3"
+  children: "duct_in3"
+  children: "duct_out3"
+  data: ""
+  position {
+    x: 1600.0
+    y: 933.0
   }
 }

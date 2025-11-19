@@ -1,0 +1,56 @@
+-- Define as propriedades que aparecerão no editor da Defold
+go.property("end_position", vmath.vector3(1087, 100, 0)) -- A posição final para onde a plataforma se moverá
+go.property("duration", 5) -- O tempo, em segundos, para a plataforma ir de um ponto a outro
+go.property("loop", true) -- Define se o movimento deve ser repetido (ida e volta)
+
+-- Defina o TIPO de easing usando um número.
+-- 1: LINEAR (velocidade constante)
+-- 2: INOUTSINE (começa e termina suave)
+-- 3: OUTBOUNCE (efeito "quicando" no final)
+-- 4: INOUTQUAD
+go.property("easing_id", 2)
+
+function init(self)
+	-- Guarda a posição inicial da plataforma assim que o jogo começa
+	self.start_position = go.get_position()
+
+	-- Mapeia o número do easing_id para a constante de easing real da Defold
+	local easing_map = {
+		[1] = go.EASING_LINEAR,
+		[2] = go.EASING_INOUTSINE,
+		[3] = go.EASING_OUTBOUNCE,
+		[4] = go.EASING_INOUTQUAD
+	}
+	-- Guarda a constante de easing correta para ser usada nas animações
+	self.easing = easing_map[self.easing_id] or go.EASING_LINEAR
+	
+	-- Inicia o movimento em direção à posição final
+	move_to_end(self)
+end
+
+-- Função para mover a plataforma para a sua posição final (end_position)
+function move_to_end(self)
+	-- Anima a propriedade "position" do Game Object atual
+	go.animate(".", "position", go.PLAYBACK_ONCE_FORWARD, self.end_position, self.easing, self.duration, 0,
+		function()
+			-- Esta função é chamada quando a animação termina
+			if self.loop then
+				-- Se o loop estiver ativado, inicia o movimento de volta para a posição inicial
+				move_to_start(self)
+			end
+		end
+	)
+end
+
+-- Função para mover a plataforma de volta para a sua posição inicial (start_position)
+function move_to_start(self)
+	go.animate(".", "position", go.PLAYBACK_ONCE_FORWARD, self.start_position, self.easing, self.duration, 0,
+		function()
+			-- Esta função é chamada quando a animação de volta termina
+			if self.loop then
+				-- Se o loop estiver ativado, recomeça o ciclo, movendo para a posição final novamente
+				move_to_end(self)
+			end
+		end
+	)
+end

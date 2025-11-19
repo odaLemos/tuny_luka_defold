@@ -1153,26 +1153,6 @@ layers {
     tile: 126
   }
   cell {
-    x: 15
-    y: 6
-    tile: 124
-  }
-  cell {
-    x: 16
-    y: 6
-    tile: 126
-  }
-  cell {
-    x: 17
-    y: 6
-    tile: 126
-  }
-  cell {
-    x: 18
-    y: 6
-    tile: 123
-  }
-  cell {
     x: 23
     y: 6
     tile: 108

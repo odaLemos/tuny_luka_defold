@@ -91,6 +91,7 @@ embedded_instances {
   position {
     x: 729.0
     y: 555.0
+    z: 0.1
   }
 }
 embedded_instances {
@@ -101,6 +102,7 @@ embedded_instances {
   position {
     x: 372.0
     y: 96.0
+    z: 0.1
   }
 }
 embedded_instances {
@@ -111,5 +113,57 @@ embedded_instances {
   position {
     x: 1600.0
     y: 933.0
+    z: 0.1
+  }
+}
+embedded_instances {
+  id: "plataforma"
+  data: "components {\n"
+  "  id: \"moving_platform\"\n"
+  "  component: \"/game/scripts/moving_platform.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"tilesheet_complete-66\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/assets/plataforma.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "  scale {\n"
+  "    x: 3.708236\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"platform\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "embedded_collision_shape {\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_BOX\\n"
+  "    position {\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "    }\\n"
+  "    index: 0\\n"
+  "    count: 3\\n"
+  "  }\\n"
+  "  data: 118.71914\\n"
+  "  data: 31.325962\\n"
+  "  data: 10.0\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 1087.0
+    y: 352.0
   }
 }

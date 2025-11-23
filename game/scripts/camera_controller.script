@@ -1,0 +1,18 @@
+-- /game/scripts/camera_controller.script
+-- Este script deve ser anexado a um Game Object com um componente de Câmera.
+
+function init(self)
+    -- Escuta por uma mensagem para definir a posição da câmera.
+    -- O '#' significa "este Game Object".
+	msg.post(".", "acquire_camera_focus")
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("set_camera_position") then
+		-- message.position deve ser um vector3 com a nova posição da câmera.
+		if message.position then
+			-- Define a posição do Game Object da câmera instantaneamente.
+			go.set_position(message.position)
+		end
+	end
+end

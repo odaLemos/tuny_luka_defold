@@ -26,6 +26,7 @@ local anim_jump = hash("jump")
 local anim_fall = hash("fall")
 
 go.property("can_interact", false)
+go.property("can_enter", false)
 
 function init(self)
 	-- this lets us handle input in this script
@@ -137,10 +138,19 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == msg_contact_point_response then
 		-- Trata tanto o chão quanto a plataforma como obstáculos para a resolução da colisão
-		if message.group == group_obstacle or message.group == group_platform then
+		if message.group == group_obstacle then
 			handle_obstacle_contact(self, message.normal, message.distance)
+		elseif message.group == group_platform then
+			-- Se Tuny está subindo (velocidade Y positiva) e colidiu com a plataforma por baixo (normal.y negativo),
+			-- ignora a colisão para permitir que ele passe por ela.
+			if self.velocity.y > 0 and message.normal.y < -0.7 then
+				-- Não faz nada, permitindo a passagem por baixo
+			else
+				-- Caso contrário, trata a colisão normalmente (e.g., quando caindo em cima da plataforma)
+				handle_obstacle_contact(self, message.normal, message.distance)
+			end
 
-			-- Lógica específica para grudar na plataforma
+			-- Lógica específica para grudar na plataforma (apenas se a colisão for de cima)
 			if message.group == group_platform and message.normal.y > 0.7 then
 				if self.parent ~= message.other_id then
 					msg.post(".", "set_parent", { parent_id = message.other_id })
@@ -218,13 +228,13 @@ function on_input(self, action_id, action)
 		end
 	end
 
-	if action_id == hash("up") and self.interact_target ~= nil then
+	if action_id == hash("up") and self.can_enter then
 		go.set_position(self.duct_exit_pos)
 	end
 	
 	if action_id == hash("action") and action.pressed and self.can_interact then
 		-- O jogador está na área e pressionou o botão
-
+		self.can_enter = true
 		-- ENVIA A MENSAGEM para a alavanca. 
 		-- self.interact_target é o ID do Game Object da alavanca.
 		if self.interact_target then

@@ -41,7 +41,6 @@ collection_instances {
   position {
     x: 223.0
     y: 45.0
-    z: -0.9
   }
 }
 scale_along_z: 0
@@ -75,6 +74,7 @@ embedded_instances {
   "near_z: 1.0\\n"
   "far_z: -1.0\\n"
   "orthographic_projection: 1\\n"
+  "orthographic_mode: ORTHO_MODE_AUTO_FIT\\n"
   "\"\n"
   "}\n"
   ""
